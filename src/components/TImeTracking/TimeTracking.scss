@@ -1,0 +1,148 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-grow: 1;
+
+  .wrapper {
+    display: flex;
+  }
+
+  .time-tracking {
+    flex-grow: 1;
+    margin-left: 30px;
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    &__list-item {
+      border-radius: 10px;
+      &-pattern {
+        height: 45px;
+        border-radius: 10px;
+      }
+    }
+
+    &__list-item-inner {
+      background: hsl(235, 46%, 20%);
+      border-radius: 10px;
+      padding: 30px;
+
+      &-current-activity {
+        font-size: 52px;
+        font-weight: 300;
+        margin-bottom: 6px;
+      }
+
+      &-prev-activity {
+        font-size: 12px;
+        font-weight: 400;
+        color: hsl(236, 100%, 87%);
+      }
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-title {
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        div {
+          cursor: pointer;
+        }
+      }
+
+      &-body {
+        margin: 20px 0 0;
+      }
+    }
+  }
+}
+
+.work {
+  background: hsl(15, 100%, 70%);
+  background-image: url("../../assets/images/icon-work.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.play {
+  background: hsl(195, 74%, 62%);
+  background-image: url("../../assets/images/icon-play.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.study {
+  background: hsl(348, 100%, 68%);
+  background-image: url("../../assets/images/icon-study.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.exercise {
+  background: hsl(145, 58%, 55%);
+  background-image: url("../../assets/images/icon-exercise.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.social {
+  background: hsl(264, 64%, 52%);
+  background-image: url("../../assets/images/icon-social.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.self-care {
+  background: hsl(43, 84%, 65%);
+  background-image: url("../../assets/images/icon-self-care.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+@media (max-width: 1023px) {
+  .container {
+    .time-tracking__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    .wrapper {
+      flex-direction: column;
+    }
+    .time-tracking {
+      margin: 0;
+      &__list {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+
+        &-item-pattern {
+          height: 35px;
+        }
+      }
+
+      &__list-item-inner {
+        padding: 20px 20px 10px 20px;
+        &-body {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        &-current-activity {
+          font-size: 24px;
+        }
+
+        &-body {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
